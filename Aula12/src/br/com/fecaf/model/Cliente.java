@@ -1,5 +1,7 @@
 package br.com.fecaf.model;
 
+import br.com.fecaf.repository.ConexaoMySql;
+
 public class Cliente {
 	
 	// Atributos.
@@ -57,6 +59,8 @@ public class Cliente {
 	
 	// Métodos.
 	public boolean setNovoCliente()	{
+		// instancia
+		ConexaoMySql conexao
 		return true;
 	}
 	
