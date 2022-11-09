@@ -1,5 +1,7 @@
 package br.com.fecaf.empresa;
 
+import java.time.LocalDate;
+
 public class Motorista extends Funcionario {
 
 	// Atributos.
@@ -14,15 +16,12 @@ public class Motorista extends Funcionario {
 			String email, String dtAdmissao, int numCNH, String categoria, String dtPrimeiraHbilitacao,
 			String dtValidade) {
 		super(nome, numMatricula, dtNasc, numTel, numCel, vlHora, email, dtAdmissao);
-		this.numCNH = numCNH;
-		this.categoria = categoria;
-		this.dtPrimeiraHbilitacao = dtPrimeiraHbilitacao;
-		this.dtValidade = dtValidade;
+		this.setNumCNH(numCNH);
+		this.setCategoria(categoria);
+		this.setDtPrimeiraHbilitacao(dtPrimeiraHbilitacao);
+		this.setDtValidade(dtValidade);
 	}
-	public Motorista() {
-		super();
-	}
-	
+
 	// Métodos acessores Getters and Setters.
 	protected int getNumCNH() {
 		return numCNH;
@@ -85,12 +84,17 @@ public class Motorista extends Funcionario {
 		System.out.println("Categoria: " + this.categoria);
 		System.out.println("Data da primeira CNH: " + this.dtPrimeiraHbilitacao);
 		System.out.println("Data de validade da CNH Atual: " + this.dtValidade);
+		System.out.println("Salário mensal: R$ " + this.getSalarioMensal());
 	}
+	
 	public void salarioMensal() {
 		double diasTrabalhados = this.getNvlHora() * 8;
-		double dsr = this.getNvlHora() * 4;
-		double mesTrabalhado = (diasTrabalhados * 20) + dsr;
+		double mesTrabalhado = diasTrabalhados * 30;
 		this.setSalarioMensal(mesTrabalhado);
+	}
+	
+	public void demissao() {
+		this.setDtDemissao(LocalDate.now());
 	}
 
 }

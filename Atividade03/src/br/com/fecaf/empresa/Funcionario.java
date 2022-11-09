@@ -1,5 +1,7 @@
 package br.com.fecaf.empresa;
 
+import java.time.LocalDate;
+
 public abstract class Funcionario {
 
 	// Atributos.
@@ -12,25 +14,22 @@ public abstract class Funcionario {
 	private double nvlHora;
 	private String email;
 	private String dtAdmissao;
-	private String dtDemissao;
+	private LocalDate dtDemissao;
 	
 	// Método construtor.
 	public Funcionario(String nome, int numMatricula, String dtNasc, String numTel, String numCel, double vlHora,
 			String email, String dtAdmissao) {
 		super();
-		this.nome = nome;
-		this.numMatricula = numMatricula;
-		this.dtNasc = dtNasc;
-		this.numTel = numTel;
-		this.numCel = numCel;
-		this.vlHora = vlHora;
-		this.email = email;
-		this.dtAdmissao = dtAdmissao;
+		this.setNome(nome);
+		this.setNumMatricula(numMatricula);
+		this.setDtNasc(dtNasc);
+		this.setNumTel(numTel);
+		this.setNumCel(numCel);
+		this.setVlHora(vlHora);
+		this.setEmail(email);
+		this.setDtAdmissao(dtAdmissao);
 	}
-	public Funcionario() {
-		
-	}
-
+	
 	// Métodos acessores Getters and Setters.
 	protected String getNome() {
 		return nome;
@@ -87,11 +86,11 @@ public abstract class Funcionario {
 		this.nvlHora = nvlhora;
 	}
 	
-	protected String email() {
+	protected String getEmail() {
 		return email;
 	}
 
-	protected void email(String email) {
+	protected void setEmail(String email) {
 		this.email = email;
 	}
 
@@ -103,11 +102,11 @@ public abstract class Funcionario {
 		this.dtAdmissao = dtAdmissao;
 	}
 
-	protected String getDtDemissao() {
+	protected LocalDate getDtDemissao() {
 		return dtDemissao;
 	}
 
-	protected void setDtDemissao(String dtDemissao) {
+	protected void setDtDemissao(LocalDate dtDemissao) {
 		this.dtDemissao = dtDemissao;
 	}
 	
@@ -119,7 +118,8 @@ public abstract class Funcionario {
 		System.out.println("Data Nascimento: " + this.dtNasc);
 		System.out.println("Telefone: " + this.numTel);
 		System.out.println("Celular: " + this.numCel);
-		System.out.println("Valor por hora trabalhada:" + this.nvlHora);
+		System.out.println("Valor por hora: R$ " + this.vlHora);
+		System.out.println("Novo valor da hora: R$ " + this.nvlHora);
 		System.out.println("Email: " + this.email);
 		System.out.println("Data de admissão: " + this.dtAdmissao);
 		System.out.println("Data de demissão: " + this.dtDemissao);	
