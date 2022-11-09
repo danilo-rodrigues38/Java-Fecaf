@@ -1,22 +1,21 @@
 package br.com.fecaf.model;
 
-import br.com.fecaf.repository.ConexaoMySql;
+import br.com.fecaf.repository.ConexaoMysql;
 
 public class Cliente {
-	
-	// Atributos.
+	//Atributos
 	private int id;
 	private String nome;
 	private String telefone;
 	private String celular;
 	private String email;
 	
-	// Método construtor.
-	public Cliente() {
+	//Construtor
+	public Cliente () {
 		
 	}
-	
-	// Métodos acessores Getters and Setters.
+
+	//Getters e Setters
 	public int getId() {
 		return id;
 	}
@@ -56,15 +55,18 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	// Métodos.
-	public boolean setNovoCliente()	{
-		// instancia
-		ConexaoMySql conexao
+
+	//Metodos
+	//Insere um novo Cliente no Banco de Dados
+	public boolean setNovoCliente () {
+		//instancia
+		ConexaoMysql conexaoMysql = new ConexaoMysql();
+		//insert
 		return true;
 	}
 	
-	public void getListClientes() {
-		
+	//Retorna os clientes do Banco de Dados
+	public void getListClientes () {
+		//select
 	}
 }
